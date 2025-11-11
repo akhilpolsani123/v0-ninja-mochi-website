@@ -52,15 +52,10 @@ export default function MenuPage() {
       <header className="sticky top-0 z-50 bg-white shadow-sm">
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/images/ninja-logo.png"
-              alt="Ninja Mochi Donut"
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
-            <span className="text-2xl font-bold text-[#ff6b6b]">Ninja Mochi</span>
+            <span className="text-2xl font-bold text-[#ff6b6b]">ninjamochidonut.com</span>
+            <div className="w-0.5 h-8 bg-[#ff6b6b]/30 rounded-full"></div>
           </Link>
+          {/* End of change */}
           <nav className="hidden md:block">
             <ul className="flex items-center gap-8">
               <li>

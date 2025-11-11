@@ -18,15 +18,10 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-white shadow-md">
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/images/ninja-logo.png"
-              alt="Ninja Mochi Donut"
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
-            <span className="text-2xl font-bold text-[#ff3e6c]">Ninja Mochi</span>
+            <span className="text-xl font-bold text-[#ff3e6c]">ninjamochidonut.com</span>
+            <div className="w-0.5 h-8 bg-[#ff3e6c]/30 rounded-full"></div>
           </Link>
+          {/* End of change */}
           <nav className="hidden md:block">
             <ul className="flex items-center gap-8">
               <li>

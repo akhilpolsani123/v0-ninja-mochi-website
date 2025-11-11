@@ -36,15 +36,10 @@ export default function LocationsPage() {
       <header className="sticky top-0 z-50 bg-white shadow-sm">
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/images/ninja-logo.png"
-              alt="Ninja Mochi Donut"
-              width={40}
-              height={40}
-              className="rounded-full"
-            />
-            <span className="text-2xl font-bold text-[#ff3e6c]">Ninja Mochi</span>
+            <span className="text-xl font-bold text-[#ff3e6c]">ninjamochidonut.com</span>
+            <div className="w-0.5 h-8 bg-[#ff3e6c]/30 rounded-full"></div>
           </Link>
+          {/* End of change */}
           <nav className="hidden md:block">
             <ul className="flex items-center gap-8">
               <li>
@@ -226,7 +221,7 @@ export default function LocationsPage() {
                     <a href="tel:+13614422160">
                       <Button
                         variant="outline"
-                        className="rounded-full gap-2 border-[#ff3e6c] text-[#ff3e6c] hover:bg-[#ff3e6c]/10"
+                        className="rounded-full gap-2 border-[#ff3e6c] text-[#ff3e6c] hover:bg-[#ff3e6c]/10 bg-transparent"
                       >
                         <Phone className="h-4 w-4" /> CALL
                       </Button>
@@ -321,7 +316,7 @@ export default function LocationsPage() {
                     <a href="tel:+13612990458">
                       <Button
                         variant="outline"
-                        className="rounded-full gap-2 border-[#ff3e6c] text-[#ff3e6c] hover:bg-[#ff3e6c]/10"
+                        className="rounded-full gap-2 border-[#ff3e6c] text-[#ff3e6c] hover:bg-[#ff3e6c]/10 bg-transparent"
                       >
                         <Phone className="h-4 w-4" /> CALL
                       </Button>
