@@ -684,12 +684,12 @@ export default function Home() {
               </p>
               <p className="text-white/80">
                 <a
-                  href="https://ninjamochidonut.com"
+                  href="https://ninjamochidonuts.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-white"
                 >
-                  ninjamochidonut.com
+                  ninjamochidonuts.com
                 </a>
               </p>
             </div>
