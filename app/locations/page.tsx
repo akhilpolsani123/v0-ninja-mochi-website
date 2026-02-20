@@ -36,7 +36,7 @@ export default function LocationsPage() {
       <header className="sticky top-0 z-50 bg-white shadow-sm">
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-[#ff3e6c]">ninjamochidonut.com</span>
+            <span className="text-xl font-bold text-[#ff3e6c]">ninjamochidonuts.com</span>
             <div className="w-0.5 h-8 bg-[#ff3e6c]/30 rounded-full"></div>
           </Link>
           {/* End of change */}
@@ -355,12 +355,12 @@ export default function LocationsPage() {
                         <p className="font-medium text-[#4a3728]">WEBSITE</p>
                         <p className="text-sm text-[#6b5344]">
                           <a
-                            href="https://ninjamochidonut.com"
+                            href="https://ninjamochidonuts.com"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-[#ff3e6c]"
                           >
-                            ninjamochidonut.com
+                            ninjamochidonuts.com
                           </a>
                         </p>
                       </div>
