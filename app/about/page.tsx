@@ -1,18 +1,19 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, useInView, useAnimation } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Mail, Phone, Store, PartyPopper } from "lucide-react"
 import { OrderDialog } from "@/components/order-dialog"
 
 export default function AboutPage() {
   const controls = useAnimation()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     if (isInView) {
@@ -28,7 +29,6 @@ export default function AboutPage() {
           <Link href="/" className="flex items-center gap-2">
             <span className="text-base sm:text-xl font-bold text-[#ff3e6c]">ninjamochidonuts.com</span>
           </Link>
-          {/* End of change */}
           <nav className="hidden md:block">
             <ul className="flex items-center gap-8">
               <li>
@@ -60,45 +60,68 @@ export default function AboutPage() {
               </Button>
             </OrderDialog>
 
-            <Sheet>
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
-                  <Menu className="h-6 w-6" />
-                  <span className="sr-only">Toggle menu</span>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="md:hidden min-w-[44px] min-h-[44px] p-2"
+                  aria-label="Open navigation menu"
+                >
+                  <Menu className="h-7 w-7" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <div className="flex flex-col h-full">
-                  <div className="flex items-center justify-between mb-6">
-                    <Link href="/" className="font-bold text-xl">
+                  <div className="flex items-center justify-between mb-8">
+                    <Link href="/" className="font-bold text-xl text-[#ff3e6c]" onClick={() => setMobileMenuOpen(false)}>
                       NINJA MOCHI
                     </Link>
-                    <SheetTrigger asChild>
-                      <Button variant="ghost" size="icon">
-                        <X className="h-6 w-6" />
-                        <span className="sr-only">Close menu</span>
-                      </Button>
-                    </SheetTrigger>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="min-w-[44px] min-h-[44px]"
+                      onClick={() => setMobileMenuOpen(false)}
+                      aria-label="Close navigation menu"
+                    >
+                      <X className="h-6 w-6" />
+                    </Button>
                   </div>
 
-                  <nav className="flex flex-col gap-4">
-                    <Link href="/" className="text-lg font-medium hover:underline">
+                  <nav className="flex flex-col gap-1" role="navigation" aria-label="Mobile navigation">
+                    <Link
+                      href="/"
+                      className="text-lg font-medium text-[#4a3728] hover:text-[#ff3e6c] py-3 px-4 rounded-lg hover:bg-[#ff3e6c]/5 transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       Home
                     </Link>
-                    <Link href="/about" className="text-lg font-medium hover:underline font-bold text-[#ff3e6c]">
+                    <Link
+                      href="/about"
+                      className="text-lg font-bold text-[#ff3e6c] py-3 px-4 rounded-lg bg-[#ff3e6c]/5 transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       About
                     </Link>
-                    <Link href="/menu" className="text-lg font-medium hover:underline">
+                    <Link
+                      href="/menu"
+                      className="text-lg font-medium text-[#4a3728] hover:text-[#ff3e6c] py-3 px-4 rounded-lg hover:bg-[#ff3e6c]/5 transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       Menu
                     </Link>
-                    <Link href="/locations" className="text-lg font-medium hover:underline">
+                    <Link
+                      href="/locations"
+                      className="text-lg font-medium text-[#4a3728] hover:text-[#ff3e6c] py-3 px-4 rounded-lg hover:bg-[#ff3e6c]/5 transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       Locations
                     </Link>
                   </nav>
 
                   <div className="mt-auto pt-6">
                     <OrderDialog>
-                      <Button className="w-full rounded-full bg-[#ff3e6c] hover:bg-[#e62e5c]">Order Now</Button>
+                      <Button className="w-full rounded-full bg-[#ff3e6c] hover:bg-[#e62e5c] text-white min-h-[48px] text-base">Order Now</Button>
                     </OrderDialog>
                   </div>
                 </div>
@@ -563,6 +586,103 @@ export default function AboutPage() {
                 {testimonial.subtitle && <p className="text-[#6b5344] text-xs">{testimonial.subtitle}</p>}
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Party Orders & Franchise Section */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-[#4a3728]">More From Ninja Mochi</h2>
+          <p className="text-center text-[#6b5344] mb-12 max-w-2xl mx-auto">
+            From party platters to franchise opportunities, we have something special for everyone.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Party & Large Orders */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="relative rounded-2xl border border-[#ffe0d6] bg-[#fff8f3] p-8 hover:shadow-lg transition-shadow"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-[#ff3e6c]/10 flex items-center justify-center flex-shrink-0">
+                  <PartyPopper className="h-6 w-6 text-[#ff3e6c]" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#4a3728]">Party & Large Orders</h3>
+              </div>
+              <p className="text-[#6b5344] mb-6 leading-relaxed">
+                Planning an event? We accept party orders, large bulk orders, and special event orders. Let us make your celebration sweeter!
+              </p>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-center gap-3 text-[#4a3728]">
+                  <span className="w-2 h-2 rounded-full bg-[#ff3e6c] flex-shrink-0" />
+                  Party Orders
+                </li>
+                <li className="flex items-center gap-3 text-[#4a3728]">
+                  <span className="w-2 h-2 rounded-full bg-[#ff3e6c] flex-shrink-0" />
+                  Large / Bulk Orders
+                </li>
+                <li className="flex items-center gap-3 text-[#4a3728]">
+                  <span className="w-2 h-2 rounded-full bg-[#ff3e6c] flex-shrink-0" />
+                  Special Event Orders
+                </li>
+              </ul>
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center gap-3 text-[#6b5344]">
+                  <Mail className="h-5 w-5 text-[#ff3e6c] flex-shrink-0" />
+                  <a href="mailto:ninjamochi02@gmail.com" className="hover:text-[#ff3e6c] transition-colors underline">
+                    ninjamochi02@gmail.com
+                  </a>
+                </div>
+                <div className="flex items-center gap-3 text-[#6b5344]">
+                  <Phone className="h-5 w-5 text-[#ff3e6c] flex-shrink-0" />
+                  <span>Call any of our store locations for assistance</span>
+                </div>
+              </div>
+              <a href="mailto:ninjamochi02@gmail.com?subject=Party%20Order%20Inquiry">
+                <Button className="w-full bg-[#ff3e6c] hover:bg-[#e62e5c] text-white rounded-full min-h-[48px] text-base shadow-md hover:shadow-lg transition-all">
+                  Contact Us for Party Orders
+                </Button>
+              </a>
+            </motion.div>
+
+            {/* Franchise Opportunities */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              viewport={{ once: true }}
+              className="relative rounded-2xl border border-[#ffe0d6] bg-[#fff8f3] p-8 hover:shadow-lg transition-shadow"
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 rounded-full bg-[#ff3e6c]/10 flex items-center justify-center flex-shrink-0">
+                  <Store className="h-6 w-6 text-[#ff3e6c]" />
+                </div>
+                <h3 className="text-2xl font-bold text-[#4a3728]">Franchise Opportunities</h3>
+              </div>
+              <p className="text-[#6b5344] mb-6 leading-relaxed">
+                We are now offering franchise opportunities in new locations. Join the Ninja Mochi family and bring our delicious mochi donuts to your community!
+              </p>
+              <p className="text-[#6b5344] mb-8 leading-relaxed">
+                If you are interested in opening a Ninja Mochi Donuts franchise, please reach out to us for more information about our franchise program.
+              </p>
+              <div className="flex items-center gap-3 text-[#6b5344] mb-6">
+                <Mail className="h-5 w-5 text-[#ff3e6c] flex-shrink-0" />
+                <a href="mailto:ninjamochi02@gmail.com" className="hover:text-[#ff3e6c] transition-colors underline">
+                  ninjamochi02@gmail.com
+                </a>
+              </div>
+              <a href="mailto:ninjamochi02@gmail.com?subject=Franchise%20Inquiry">
+                <Button
+                  variant="outline"
+                  className="w-full border-[#ff3e6c] text-[#ff3e6c] hover:bg-[#ff3e6c] hover:text-white rounded-full min-h-[48px] text-base shadow-md hover:shadow-lg transition-all"
+                >
+                  Franchise With Us
+                </Button>
+              </a>
+            </motion.div>
           </div>
         </div>
       </section>

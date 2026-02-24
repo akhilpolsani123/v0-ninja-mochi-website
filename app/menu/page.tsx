@@ -8,11 +8,11 @@ import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, X } from "lucide-react"
-// Add the import for OrderDialog at the top of the file
 import { OrderDialog } from "@/components/order-dialog"
 
 export default function MenuPage() {
   const [activeTab, setActiveTab] = useState("donuts")
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   // Fix for page loading issues and tab synchronization
   useEffect(() => {
@@ -84,45 +84,68 @@ export default function MenuPage() {
               <Button className="bg-[#ff6b6b] hover:bg-[#ff5252] text-white rounded-md px-6">Order Now</Button>
             </OrderDialog>
 
-            <Sheet>
+            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="md:hidden">
-                  <Menu className="h-6 w-6" />
-                  <span className="sr-only">Toggle menu</span>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="md:hidden min-w-[44px] min-h-[44px] p-2"
+                  aria-label="Open navigation menu"
+                >
+                  <Menu className="h-7 w-7" />
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px] sm:w-[400px]">
                 <div className="flex flex-col h-full">
-                  <div className="flex items-center justify-between mb-6">
-                    <Link href="/" className="font-bold text-xl">
+                  <div className="flex items-center justify-between mb-8">
+                    <Link href="/" className="font-bold text-xl text-[#ff6b6b]" onClick={() => setMobileMenuOpen(false)}>
                       NINJA MOCHI
                     </Link>
-                    <SheetTrigger asChild>
-                      <Button variant="ghost" size="icon">
-                        <X className="h-6 w-6" />
-                        <span className="sr-only">Close menu</span>
-                      </Button>
-                    </SheetTrigger>
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="min-w-[44px] min-h-[44px]"
+                      onClick={() => setMobileMenuOpen(false)}
+                      aria-label="Close navigation menu"
+                    >
+                      <X className="h-6 w-6" />
+                    </Button>
                   </div>
 
-                  <nav className="flex flex-col gap-4">
-                    <Link href="/" className="text-lg font-medium hover:underline">
+                  <nav className="flex flex-col gap-1" role="navigation" aria-label="Mobile navigation">
+                    <Link
+                      href="/"
+                      className="text-lg font-medium text-[#4a3728] hover:text-[#ff6b6b] py-3 px-4 rounded-lg hover:bg-[#ff6b6b]/5 transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       Home
                     </Link>
-                    <Link href="/about" className="text-lg font-medium hover:underline">
+                    <Link
+                      href="/about"
+                      className="text-lg font-medium text-[#4a3728] hover:text-[#ff6b6b] py-3 px-4 rounded-lg hover:bg-[#ff6b6b]/5 transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       About
                     </Link>
-                    <Link href="/menu" className="text-lg font-medium hover:underline font-bold text-[#ff6b6b]">
+                    <Link
+                      href="/menu"
+                      className="text-lg font-bold text-[#ff6b6b] py-3 px-4 rounded-lg bg-[#ff6b6b]/5 transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       Menu
                     </Link>
-                    <Link href="/locations" className="text-lg font-medium hover:underline">
+                    <Link
+                      href="/locations"
+                      className="text-lg font-medium text-[#4a3728] hover:text-[#ff6b6b] py-3 px-4 rounded-lg hover:bg-[#ff6b6b]/5 transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
                       Locations
                     </Link>
                   </nav>
 
                   <div className="mt-auto pt-6">
                     <OrderDialog>
-                      <Button className="w-full rounded-full bg-[#ff6b6b] hover:bg-[#ff5252]">Order Now</Button>
+                      <Button className="w-full rounded-full bg-[#ff6b6b] hover:bg-[#ff5252] text-white min-h-[48px] text-base">Order Now</Button>
                     </OrderDialog>
                   </div>
                 </div>
