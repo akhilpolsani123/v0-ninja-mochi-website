@@ -18,8 +18,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-white shadow-md">
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-[#ff3e6c]">ninjamochidonuts.com</span>
-            <div className="w-0.5 h-8 bg-[#ff3e6c]/30 rounded-full"></div>
+            <span className="text-base sm:text-xl font-bold text-[#ff3e6c]">ninjamochidonuts.com</span>
           </Link>
           {/* End of change */}
           <nav className="hidden md:block">
@@ -647,7 +646,7 @@ export default function Home() {
                 <span className="text-2xl font-bold">Ninja Mochi</span>
               </div>
               <p className="text-sm text-white/80">
-                Asian fusion dessert bar featuring mochi donuts, boba drinks, Korean corn dogs, and more.
+                Mochi Donuts and Dessert featuring boba drinks, Korean corn dogs, and more.
               </p>
             </div>
             <div>

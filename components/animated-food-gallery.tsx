@@ -37,7 +37,7 @@ export function AnimatedFoodGallery() {
         >
           <Image
             src={images[currentIndex] || "/placeholder.svg"}
-            alt="Asian fusion desserts"
+            alt="Mochi donuts and desserts"
             fill
             className="object-cover"
             priority

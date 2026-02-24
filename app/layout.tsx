@@ -7,8 +7,8 @@ import "./globals.css"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Ninja Mochi Donut - Asian Fusion Dessert Bar",
-  description: "Experience authentic Asian fusion desserts including mochi donuts, boba, Korean corndogs, and more.",
+  title: "Ninja Mochi Donut - Mochi Donuts and Dessert",
+  description: "Experience authentic mochi donuts, boba, Korean corndogs, and more at Ninja Mochi Donut.",
     generator: 'v0.app'
 }
 

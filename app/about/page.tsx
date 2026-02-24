@@ -26,8 +26,7 @@ export default function AboutPage() {
       <header className="sticky top-0 z-50 bg-white shadow-sm">
         <div className="container mx-auto flex h-20 items-center justify-between px-4">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-[#ff3e6c]">ninjamochidonuts.com</span>
-            <div className="w-0.5 h-8 bg-[#ff3e6c]/30 rounded-full"></div>
+            <span className="text-base sm:text-xl font-bold text-[#ff3e6c]">ninjamochidonuts.com</span>
           </Link>
           {/* End of change */}
           <nav className="hidden md:block">
@@ -165,7 +164,7 @@ export default function AboutPage() {
                     <div className="bg-[#fff8f3] p-6 rounded-lg shadow-md">
                       <h3 className="text-xl font-bold text-[#ff3e6c] mb-2">The Beginning</h3>
                       <p className="text-[#6b5344]">
-                        Ninja Mochi was born from a passion for Asian fusion desserts. Our founder discovered the joy of
+                        Ninja Mochi was born from a passion for unique desserts. Our founder discovered the joy of
                         mochi donuts during travels in Japan and knew they had to bring this delightful treat to Corpus
                         Christi.
                       </p>
@@ -573,7 +572,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto text-center text-white">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Try Ninja Mochi?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Visit one of our locations today and discover why our mochi donuts and Asian fusion treats have become a
+            Visit one of our locations today and discover why our mochi donuts and desserts have become a
             Corpus Christi favorite!
           </p>
           <div className="flex flex-wrap justify-center gap-4">
@@ -610,7 +609,7 @@ export default function AboutPage() {
                 <span className="text-2xl font-bold">Ninja Mochi</span>
               </div>
               <p className="text-sm text-white/80">
-                Asian fusion dessert bar featuring mochi donuts, boba drinks, Korean corn dogs, and more.
+                Mochi Donuts and Dessert featuring boba drinks, Korean corn dogs, and more.
               </p>
             </div>
             <div>

@@ -36,8 +36,7 @@ export function Navbar() {
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-lg font-bold text-[#ff3e6c]">ninjamochidonuts.com</span>
-          <div className="hidden sm:block w-0.5 h-6 bg-[#ff3e6c]/30 rounded-full"></div>
+          <span className="text-base sm:text-lg font-bold text-[#ff3e6c]">ninjamochidonuts.com</span>
         </Link>
         {/* End of change */}
 
@@ -108,8 +107,7 @@ export function Navbar() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between mb-6">
                   <Link href="/" className="flex items-center gap-2">
-                    <span className="text-lg font-bold text-[#ff3e6c]">ninjamochidonuts.com</span>
-                    <div className="hidden sm:block w-0.5 h-6 bg-[#ff3e6c]/30 rounded-full"></div>
+                    <span className="text-base sm:text-lg font-bold text-[#ff3e6c]">ninjamochidonuts.com</span>
                   </Link>
                   {/* End of change */}
                   <SheetTrigger asChild>
